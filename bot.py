@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-import random, time
+import random, time, os
 
 
 
@@ -93,4 +93,7 @@ async def unban(ctx, member:discord.Member=None):
             await ctx.send(f'Unbanned {user.mention}')
 
 def bot_run():
-    bot.run('NzI5MjI1NTgxOTU0MjAzNzIx.XwF2Pw.sW-OFPdozBpboFgbJKeu9mUhwZU')
+    bot.run(os.environ["TOKEN"])
+
+if '__main__' == __name__:
+    bot_run()
